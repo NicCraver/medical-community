@@ -1,0 +1,38 @@
+{
+  "name": "subapp-manage-module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@femessage/element-ui": "^2.22.0",
+    "anx-vue": "git+http://10.16.140.53/anxhit/medicalsservicescommunity/01-baselines/frontends/anx-vue.git",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "bpmn-js": "^5.1.2",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.11.5",
+    "element-ui": "^2.15.7",
+    "svg-sprite-loader": "^6.0.11",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "wangeditor": "^4.7.12"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-router": "~4.5.15",
+    "@vue/cli-plugin-vuex": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
