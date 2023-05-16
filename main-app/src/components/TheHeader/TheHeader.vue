@@ -112,6 +112,7 @@ const loginName = computed(() => {
 const router = useRouter()
 const internalInstance = getCurrentInstance()
 const onLogout = async () => {
+  console.log(`11111111`,11111111)
   try {
     await logout(sessionStorage.getItem('userId'))
     sessionStorage.clear()
@@ -121,6 +122,9 @@ const onLogout = async () => {
     internalInstance.appContext.config.globalProperties.$disconnect()
     // window?.location?.reload?.()
   } catch (err) {
+    sessionStorage.clear()
+    notification.destroy()
+    window?.location?.reload?.()
     console.error(err)
   }
 }

@@ -89,6 +89,11 @@ export const router = createRouter({
       component: () => import('../views/child/ygtPortal.vue'),
     },
     {
+      path: '/app-qcCenter/:page*',
+      meta: { requireAuth: true },
+      component: () => import('../views/child/qcCenter.vue'),
+    },
+    {
       path: '/app-template/:page*',
       meta: { requireAuth: true },
       component: () => import('../views/child/template.vue'),

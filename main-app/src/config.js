@@ -18,7 +18,7 @@ const config = {
   serverResourceManage: 'http://localhost:7059',
   publicServe: 'http://localhost:7060',
   ygtPortal: 'http://localhost:7061',
-  ygtPortal: 'http://localhost:7062',
+  qcCenter: 'http://localhost:7062',
   // template: 'http://localhost:7056',
 }
 // 线上环境地址

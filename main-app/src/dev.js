@@ -37,16 +37,7 @@ export const systemName = () => {
 export const envConfig = () => {
   let url
   url = process.env.VUE_APP_BASE_API
-  // url = 'http://10.16.140.76:6001'
-  // url = 'http://106.14.116.14:7001'
-  // url = 'http://192.168.197.181:7001'
-  // url = 'http://10.16.140.30:7001'
-  // 测试环境 7000
-  // url = 'http://124.196.7.86:7000'
-  // 开发环境 7001
-  // url = 'http://124.196.7.86:7001'
-  // url = 'http://10.16.140.13:7000'
-  // url = 'http://10.16.140.21:7000'
+  url = 'http://10.16.140.27:7001'
   return url
 }
 
