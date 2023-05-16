@@ -1,0 +1,54 @@
+.referral-table {
+  width: 100%;
+  min-width: 1180px;
+  border: 1px solid red;
+  border-collapse: collapse;
+  background-color: #fff;
+  font-size: 14px;
+  td {
+    border: 1px solid #f1f1f1;
+    padding: 8px 5px;
+    // box-sizing: content-box;
+  }
+  .width75 {
+    min-width: 75px;
+  }
+  .width90 {
+    min-width: 90px;
+  }
+  .width100 {
+    min-width: 100px;
+  }
+  .width110 {
+    min-width: 110px;
+  }
+  .width120 {
+    min-width: 120px;
+  }
+  .width130 {
+    min-width: 130px;
+  }
+  .width150 {
+    min-width: 150px
+  }
+  .width160 {
+    min-width: 160px
+  }
+  .width210 {
+    min-width: 210px
+  }
+  .width270 {
+    min-width: 270px
+  }
+  .right {
+    text-align: right;
+    color: #919191;
+  }
+}
+.el-collapse-item {
+  margin-top: 20px;
+  ::v-deep.el-collapse-item__content {
+    padding-top: 0;
+    overflow-x: auto;
+  }
+}

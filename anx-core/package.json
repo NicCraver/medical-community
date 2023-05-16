@@ -1,0 +1,21 @@
+{
+  "name": "anx-core",
+  "version": "0.0.1",
+  "description": "项目基础核心库",
+  "main": "lib/index.js",
+  "scripts": {
+    "lib": "./node_modules/.bin/babel src --out-dir lib",
+    "build": "./node_modules/.bin/babel src --out-dir lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.4.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "big.js": "^5.2.2",
+    "dayjs": "^1.8.25"
+  }
+}

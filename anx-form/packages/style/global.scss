@@ -1,0 +1,27 @@
+@import './element-ui.scss';
+// @import '../iconfont/iconfont.css';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+#dm-extension-sniffer {
+  height: 0;
+}
+
+.ghost{
+  background: #F56C6C;
+  border: 2px solid #F56C6C;
+  outline-width: 0;
+  height: 3px;
+  box-sizing: border-box;
+  font-size: 0;
+  content: '';
+  overflow: hidden;
+  padding: 0;
+}

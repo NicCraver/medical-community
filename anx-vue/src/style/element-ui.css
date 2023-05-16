@@ -1,0 +1,75 @@
+/* 美化表格滚动条样式 */
+.el-table__body-wrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.el-table__body-wrapper::-webkit-scrollbar-thumb {
+  background-color: #dddee0;
+  border-radius: 8px;
+}
+.el-date-editor .el-range__icon {
+  font-size: 16px;
+  margin-left: -5px;
+  margin-top: -6px;
+  color: #c0c4cc;
+  float: left;
+  line-height: 32px;
+}
+
+/* 日期选择器样式调整 */
+.el-date-editor .el-range__close-icon {
+  font-size: 14px;
+  color: #c0c4cc;
+  width: 25px;
+  display: inline-block;
+  line-height: 32px;
+  margin-top: -7px !important;
+}
+.el-date-editor .el-range-separator {
+  display: inline-block;
+  height: 100%;
+  margin: 0 5px !important;
+  margin-top: -8px !important;
+  text-align: center;
+  line-height: 32px;
+  font-size: 14px;
+  width: 5%;
+  color: #303133;
+  padding: 0;
+}
+
+/* 按钮 */
+/* .el-button--default {
+  border-color: #446abd;
+  color: #446abd !important;
+} */
+.el-table {
+  border-color: #f0f0f0;
+}
+
+/* 表格头背景颜色 */
+thead td,
+th {
+  background-color: #fafafa !important;
+}
+
+/* 弹窗 头部 底部  边框 */
+.el-dialog__header {
+  border-bottom: 1px solid #e9e9e9;
+  padding: 10px 10px 10px 0 !important;
+}
+.el-dialog__footer {
+  border-top: 1px solid #e9e9e9;
+}
+.el-dialog__title {
+  border-left: 3px solid #446abd;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #303133;
+}
+
+/* 统一分页 */
+.el-pagination {
+  margin-top: 15px;
+  text-align: right;
+}
