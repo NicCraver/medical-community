@@ -1,0 +1,227 @@
+import {
+  Empty,
+  Pagination,
+  Dialog,
+  Autocomplete,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup,
+  Input,
+  InputNumber,
+  Radio,
+  RadioGroup,
+  RadioButton,
+  Checkbox,
+  CheckboxButton,
+  CheckboxGroup,
+  Switch,
+  Select,
+  Option,
+  OptionGroup,
+  Button,
+  ButtonGroup,
+  Table,
+  TableColumn,
+  DatePicker,
+  TimeSelect,
+  TimePicker,
+  Popover,
+  Tooltip,
+  Breadcrumb,
+  BreadcrumbItem,
+  Form,
+  FormItem,
+  Tabs,
+  TabPane,
+  Tag,
+  Tree,
+  Alert,
+  Slider,
+  Icon,
+  Row,
+  Col,
+  Upload,
+  Progress,
+  Spinner,
+  Badge,
+  Card,
+  Rate,
+  Steps,
+  Step,
+  Carousel,
+  CarouselItem,
+  Collapse,
+  CollapseItem,
+  Cascader,
+  ColorPicker,
+  Transfer,
+  Container,
+  Header,
+  Aside,
+  Main,
+  Footer,
+  Timeline,
+  TimelineItem,
+  Link,
+  Divider,
+  Image,
+  Calendar,
+  Backtop,
+  PageHeader,
+  CascaderPanel,
+  Drawer,
+  Loading,
+  MessageBox,
+  Message,
+  Notification,
+  Scrollbar,
+  Descriptions, DescriptionsItem, InfiniteScroll
+} from 'element-ui'
+
+/**
+ * message方法 默认可关闭
+ * @param {*} options 消息 | 配置项
+ */
+export function anxMessage(options) {
+  Message({
+    showClose: true,
+    ...options,
+  })
+}
+
+/**
+ * 确认框，默认确定取消按钮，警告状态
+ * @param {*} message 提示语
+ * @param {*} title 标题
+ * @param {*} options 配置
+ */
+export function axnConfirm(message, title = '提示', options = {}) {
+  let _options = {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+    ...options,
+  }
+  return MessageBox.confirm(message, title, _options)
+}
+export function Prompt(message, title = '提示', options = {}) {
+  let _options = {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+    ...options,
+  }
+  return MessageBox.prompt(message, title, _options)
+}
+export function anxAlert(message, title = '提示', options = {}) {
+  let _options = {
+    confirmButtonText: '确定',
+    ...options,
+  }
+  return MessageBox.alert(message, title, _options)
+}
+
+export default {
+  components: [
+    Empty,
+    Pagination,
+    Dialog,
+    Autocomplete,
+    Dropdown,
+    DropdownMenu,
+    DropdownItem,
+    Menu,
+    Submenu,
+    MenuItem,
+    MenuItemGroup,
+    Input,
+    InputNumber,
+    Radio,
+    RadioGroup,
+    RadioButton,
+    Checkbox,
+    CheckboxButton,
+    CheckboxGroup,
+    Switch,
+    Select,
+    Option,
+    OptionGroup,
+    Button,
+    ButtonGroup,
+    Table,
+    TableColumn,
+    DatePicker,
+    TimeSelect,
+    TimePicker,
+    Popover,
+    Tooltip,
+    Breadcrumb,
+    BreadcrumbItem,
+    Form,
+    FormItem,
+    Tabs,
+    TabPane,
+    Tag,
+    Tree,
+    Alert,
+    Slider,
+    Icon,
+    Row,
+    Col,
+    Upload,
+    Progress,
+    Spinner,
+    Badge,
+    Card,
+    Rate,
+    Steps,
+    Step,
+    Carousel,
+    CarouselItem,
+    Collapse,
+    CollapseItem,
+    Cascader,
+    ColorPicker,
+    Transfer,
+    Container,
+    Header,
+    Aside,
+    Main,
+    Footer,
+    Timeline,
+    TimelineItem,
+    Link,
+    Divider,
+    Image,
+    Calendar,
+    Backtop,
+    PageHeader,
+    CascaderPanel,
+    Drawer,
+    Scrollbar,
+    Descriptions, DescriptionsItem, InfiniteScroll
+  ],
+  serve: [Loading],
+  methods: [
+    {
+      name: 'message',
+      method: Message,
+    },
+    {
+      name: 'confirm',
+      method: axnConfirm,
+    },
+    {
+      name: 'prompt',
+      method: Prompt,
+    },
+    {
+      name: 'alert',
+      method: anxAlert,
+    },
+  ],
+}

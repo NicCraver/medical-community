@@ -1,0 +1,116 @@
+* {
+  font-family: 'SourceHanSansSC-regular';
+}
+
+.head {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  position: relative;
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 3px;
+    height: 20px;
+    background-color: #134796;
+  }
+}
+
+.tip {
+  display: flex;
+  flex-grow: 1;
+  height: 32px;
+  line-height: 32px;
+  color: #134796;
+  background-color: #e7edf5;
+  padding: 0 10px;
+  vertical-align: bottom;
+  margin-left: 10px;
+  border: 1px solid #446abd;
+
+  i {
+    margin-right: 10px;
+  }
+
+  .el-button {
+    margin-left: 10px;
+    color: #134796;
+  }
+}
+
+.table-circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d5dade;
+  margin-right: 5px;
+}
+
+.table-circle-blue {
+  background-color: #134796;
+}
+
+// .el-menu-item {
+//   padding-left: 16px !important;
+//   height: 32px;
+//   line-height: 32px;
+
+//   &.is-active {
+//     background-color: #e7edf5 !important;
+//   }
+// }
+
+// 文字超出后...
+.overflow-point {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.protitle {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+}
+
+.promain {
+  padding: 10px;
+  height: calc(100% - 40px);
+}
+
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+/* 设置浮动，减少浮动带来的 bug */
+.fl,
+.fr {
+  display: inline;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}

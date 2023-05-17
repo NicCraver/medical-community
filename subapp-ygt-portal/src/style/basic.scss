@@ -1,0 +1,61 @@
+.protal-title {
+  height: 50px;
+  padding: 10px;
+  background-color: #fff;
+  color: #303133;
+  font-size: 18px;
+  font-weight: 700;
+}
+.protal-main {
+  padding: 16px;
+  height: calc(100% - 50px);
+}
+.protal-header {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+.protal-row {
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  .tip {
+    float: right;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    background-color: #e7edf5;
+    color: #134796;
+    padding: 0 16px;
+    vertical-align: bottom;
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+.protal-menu {
+  .el-menu-item {
+    padding-left: 16px !important;
+    height: 32px;
+    line-height: 32px;
+    &.is-active {
+      background-color: #e7edf5 !important;
+    }
+  }
+}
+
+/* 设置浮动*/
+.fl,
+.fr {
+  display: inline;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
