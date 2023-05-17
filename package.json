@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"cd main-app && npm run dev\" \"cd subapp-chronic-disease && npm run dev\" \"cd subapp-follow-up && npm run dev\" \"cd subapp-manage-module && npm run dev\" \"cd subapp-qc-center && npm run dev\" \"cd subapp-referral && npm run dev\"",
     "install": "concurrently \"cd main-app && yarn\" \"cd subapp-chronic-disease && yarn\" \"cd subapp-follow-up && yarn\" \"cd subapp-manage-module && yarn\" \"cd subapp-qc-center && yarn\" \"cd subapp-referral && yarn\"",
-    "build":"zx scripts/build.mjs"
+    "build": "zx scripts/build.mjs"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/NicCraver/medical-community#readme",
   "dependencies": {
     "concurrently": "^8.0.1",
+    "inquirer": "^9.2.3",
     "npm-run-all": "^4.1.5",
     "zx": "^7.2.2"
   }
