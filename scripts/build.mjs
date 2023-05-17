@@ -1,65 +1,94 @@
 #!/usr/bin/env zx
+import inquirer from "inquirer";
+import fs from "fs";
+import path from "path";
 
-// 1. 构建main-app
-// 2. 将产物 main 复制到 build/microapp-mb、microapp-manage管理、microapp-referral、qc质控、microapp-data-dock、microapp-mh
-// 3. 将config覆盖
+const map = {
+    'subapp-chronic-disease': 'microapp-mb',
+    'subapp-follow-up': 'microapp-mb',
+    'subapp-manage-module': 'microapp-manage',
+    'subapp-qc-center': 'microapp-qc',
+    'subapp-referral': 'microapp-referral',
+    'subapp-server-resource-manage': 'microapp-data-dock',
+    'subapp-ygt-portal': 'microapp-mh'
+}
 
-// 创建build目录,如果有build文件夹,则删除
-await $`rm -rf build`;
-await $`mkdir -p build`;
+const configMaps = {
+    'microapp-mb': '慢病',
+    'microapp-manage': '后台',
+    'microapp-qc': '质量',
+    'microapp-referral': '转诊',
+    'microapp-data-dock': '数据治理',
+    'microapp-mh': '门户'
+}
+const distMaps = {
+    'subapp-chronic-disease': 'chronicDisease',
+    'subapp-follow-up': 'followup',
+    'subapp-manage-module': 'manageModule',
+    'subapp-qc-center': 'qcCenter',
+    'subapp-referral': 'referral',
+    'subapp-server-resource-manage': 'serverResourceManage',
+    'subapp-ygt-portal': 'ygtPortal'
+}
 
-// build 所有包
-await Promise.all([
-    await $`cd main-app && npm run build`,
-    $`cd subapp-chronic-disease && npm run build`,
-    $`cd subapp-follow-up && npm run build`,
-    $`cd subapp-manage-module && npm run build`,
-    $`cd subapp-qc-center && npm run build`,
-    $`cd subapp-referral && npm run build`,
-    $`cd subapp-server-resource-manage && npm run build`,
-    $`cd subapp-ygt-portal && npm run build`,
-]);
+const sub_app_ath = path.resolve(__dirname, "..");
+const sub_apps = fs
+    .readdirSync(sub_app_ath)
+    .filter((i) => /^master|subapp/.test(i));
 
-// 在build目录下创建对应项目目录
-await Promise.all([
-    await $`mkdir -p build/microapp-mb`,
-    await $`mkdir -p build/microapp-manage`,
-    await $`mkdir -p build/microapp-qc`,
-    await $`mkdir -p build/microapp-mh`,
-    await $`mkdir -p build/microapp-data-dock`,
-    await $`mkdir -p build/microapp-referral`,
-])
+const question = [
+    {
+        type: "checkbox",
+        name: "apps",
+        message: "请选择要构建的模块（按a全选，按回车直接构建全部）",
+        choices: sub_apps,
+    },
+];
 
-// 复制主应用产物到对应项目目录
-await Promise.all([
-    await $`cp -r main-app/main build/microapp-mb`,
-    await $`cp -r main-app/main build/microapp-manage`,
-    await $`cp -r main-app/main build/microapp-qc`,
-    await $`cp -r main-app/main build/microapp-mh`,
-    await $`cp -r main-app/main build/microapp-data-dock`,
-    await $`cp -r main-app/main build/microapp-referral`,
-])
 
-// 完成后删除 main-app/main
-await $`rm -rf main-app/main`;
+inquirer.prompt(question).then(async (answer) => {
+    let sub_apps_ = answer.apps.length ? answer.apps : sub_apps;
+    sub_apps_.unshift('main-app');
+    run(sub_apps_);
+});
 
-// 修改主应用config.js
-await Promise.all([
-    await $`cp scripts/configs/慢病/config.js build/microapp-mb/main/js/config.js`,
-    await $`cp scripts/configs/后台/config.js build/microapp-manage/main/js/config.js`,
-    await $`cp scripts/configs/质量/config.js build/microapp-manage/main/js/config.js`,
-    await $`cp scripts/configs/门户/config.js build/microapp-mh/main/js/config.js`,
-    await $`cp scripts/configs/数据治理/config.js build/microapp-data-dock/main/js/config.js`,
-    await $`cp scripts/configs/转诊/config.js build/microapp-referral/main/js/config.js`,
-]);
+async function run(sub_apps_) {
+    await $`rm -rf build`;
+    await $`mkdir -p build`;
 
-// 复制子应用产物到对应项目目录
-await Promise.all([
-    await $`mv subapp-chronic-disease/chronicDisease build/microapp-mb`,
-    await $`mv subapp-follow-up/followup build/microapp-mb`,
-    await $`mv subapp-manage-module/manageModule build/microapp-manage`,
-    await $`mv subapp-qc-center/qcCenter build/microapp-qc`,
-    await $`mv subapp-referral/referral build/microapp-referral`,
-    await $`mv subapp-server-resource-manage/serverResourceManage build/microapp-data-dock`,
-    await $`mv subapp-ygt-portal/ygtPortal build/microapp-mh`,
-]);
+    // 构建App
+    await Promise.all(
+        sub_apps_.map((app) => $`cd ${app} && npm run build`)
+    );
+
+    // sub_apps_ 删除第一项
+    sub_apps_.shift();
+
+    // 在build目录下创建对应项目目录 目录与sub_apps_的对应关系为map
+    await Promise.all(
+        sub_apps_.map((app) => $`mkdir -p build/${map[app]}`)
+    );
+
+    let a = sub_apps_.map((app) => `cp -r main-app/main build/${map[app]}`)
+    console.log(`a`, a)
+
+    // 复制主应用产物到对应项目目录
+    await Promise.all(
+        sub_apps_.map((app) => $`cp -r main-app/main build/${map[app]}`)
+    );
+
+    // 完成后删除 main-app/main
+    await $`rm -rf main-app/main`;
+
+    // 修改主应用config.js
+    await Promise.all(
+        sub_apps_.map((app) => $`cp scripts/configs/${configMaps[map[app]]}/config.js build/${map[app]}/main/js/config.js`)
+    );
+
+    // 复制子应用产物到对应项目目录
+    await Promise.all(
+        sub_apps_.map((app) => $`cp -r ${app}/${distMaps[app]} build/${map[app]}`)
+    );
+
+    await $`scp -P 22 -r build/* root@10.16.140.27:/opt/ygt/web`;
+}
