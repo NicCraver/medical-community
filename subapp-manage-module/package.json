@@ -9,17 +9,21 @@
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@femessage/element-ui": "^2.22.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^1.0.2",
     "anx-vue": "git+http://10.16.140.53/anxhit/medicalsservicescommunity/01-baselines/frontends/anx-vue.git",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "bpmn-js": "^5.1.2",
     "core-js": "^3.6.5",
     "dayjs": "^1.11.5",
+    "el-tree-transfer": "^2.4.7",
     "element-ui": "^2.15.7",
     "svg-sprite-loader": "^6.0.11",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
-    "wangeditor": "^4.7.12"
+    "wangeditor": "^4.7.12",
+    "wangeditor5-for-vue2": "^0.0.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
