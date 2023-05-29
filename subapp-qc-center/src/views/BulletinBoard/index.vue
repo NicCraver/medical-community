@@ -1,12 +1,29 @@
 <template>
-  <div class="BasicManageTest">
+  <div class="BulletinBoard">
     <ProLayout mainBgColor="#F5F5F5" padding="0">
-      <template #title>登录日志</template>
+      <template #title>公告栏</template>
       <template #main>
         <ProList class="ProList" :pageParams="pageParams" :total="total" :onInquire="onInquire">
           <template #header>
-            <el-input placeholder="登录名" v-model="queryParams.loginname" clearable />
-            <el-input placeholder="姓名" v-model="queryParams.name" clearable />
+            <el-select v-model="queryParams.classifyId" placeholder="类型">
+              <el-option
+                v-for="(option, index) in typeOptions"
+                :key="index"
+                :label="option.label"
+                :value="option.value"
+              />
+            </el-select>
+            <el-date-picker
+              v-model="queryParams.dateValue"
+              type="daterange"
+              value-format="yyyy-MM-dd"
+              start-placeholder="发布开始时间"
+              end-placeholder="发布结束时间"
+              range-separator="至"
+              clearable
+              align="right"
+            >
+            </el-date-picker>
           </template>
           <template #actions>
             <el-button type="primary" @click="onInquire()">搜索</el-button>
@@ -30,18 +47,13 @@
             v-loading="loading"
           >
             <el-table-column label="序号" prop="seq" width="50" />
-            <el-table-column label="登录名" prop="loginname" />
-            <el-table-column label="姓名" prop="name" />
-            <el-table-column label="登录ip" prop="loginIp" />
-            <el-table-column label="登录时间" prop="loginTime" />
-            <el-table-column label="登出时间" prop="logoutTime" /> 
-            <el-table-column label="登录时长" prop="loginHours" />
-            <!-- <el-table-column label="操作" fixed="right" width="100">
+            <el-table-column label="类型" prop="classifyDesc" width="200" />
+            <el-table-column label="标题">
               <template slot-scope="{ row }">
-                <el-button type="text" @click="fnExamine(row)">查看</el-button>
-                <el-button type="text" @click="fnEdit(row)">编辑</el-button>
+                <el-button type="text" @click="onView(row)">{{ row.newsName }}</el-button>
               </template>
-            </el-table-column> -->
+            </el-table-column>
+            <el-table-column label="时间" width="180" prop="publishDate" />
           </el-table>
         </ProList>
       </template>
@@ -162,11 +174,13 @@
 
 <script>
 import { ProList, ProLayout, IconSvg, ProDialog } from 'anx-vue'
+import { onQueryBoardNews, getDictionarys, onSaveNews, uploadFiles } from '@/api/modules/NewsManage'
 import { onQueryUserLoginLog } from '../../api/modules/loginLog'
 export default {
   components: { ProLayout, ProList, IconSvg, ProDialog },
   data() {
     return {
+      typeOptions: [],
       DirectoryTypeList: [],
       IdcList: [],
       HosList: [],
@@ -237,23 +251,33 @@ export default {
   },
   async created() {
     this.onInquire()
+    this.getDictionarys()
   },
   methods: {
+    onView(row) {
+      this.$router.push({
+        name: 'AnnouncementDetails',
+        query: {
+          id: row.nlId,
+        },
+      })
+    },
     async onInquire() {
       try {
-        // {
-        // "icdCode"：指征编码/名称
-        // "modDateS":：更新开始时间(yyyy-MM-dd HH:mm:ss)
-        // "modDateE"：更新结束时间(yyyy-MM-dd HH:mm:ss)
-        // "directoryType"：目录类型
-        // "createDateS"：创建开始时间(yyyy-MM-dd HH:mm:ss)
-        // "createDateE"：创建结束时间(yyyy-MM-dd HH:mm:ss)
-        // "pageNum"：页数
-        // "pageSize"：每页条数
-        // }
         this.loading = true
         console.log('this.queryParams', this.queryParams)
-        const res = await onQueryUserLoginLog({
+        const res = await onQueryBoardNews({
+          // readFlg: 1,
+          publishDateS: this.queryParams.dateValue
+            ? this.queryParams.dateValue[0]
+              ? this.queryParams.dateValue[0]
+              : ''
+            : '',
+          publishDateE: this.queryParams.dateValue
+            ? this.queryParams.dateValue[1]
+              ? this.queryParams.dateValue[1]
+              : ''
+            : '',
           ...this.queryParams,
           ...this.pageParams,
         })
@@ -275,6 +299,19 @@ export default {
         this.onInquire()
       } catch (error) {
         console.log('error', error)
+      }
+    },
+    async getDictionarys() {
+      try {
+        const res = await getDictionarys([
+          {
+            key: 'typeOptions',
+            groupId: '67cc917a8e44482cb30a6f34636cedeb',
+          },
+        ])
+        this.typeOptions = res.result.typeOptions
+      } catch (error) {
+        console.error(`error`, error)
       }
     },
     fnExamine(row) {
@@ -583,7 +620,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.BasicManageTest {
+.BulletinBoard {
   ::v-deep .pro-table .query-conditions .actions {
     display: flex;
     margin-top: 10px !important;

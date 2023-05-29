@@ -7,15 +7,19 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^1.0.2",
     "anx-vue": "../anx-vue",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "core-js": "^3.6.5",
     "dayjs": "^1.11.2",
+    "el-tree-transfer": "^2.4.7",
     "element-ui": "^2.15.7",
     "svg-sprite-loader": "^6.0.11",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "wangeditor5-for-vue2": "^0.0.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
