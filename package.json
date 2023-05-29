@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"cd main-app && npm run dev\" \"cd subapp-chronic-disease && npm run dev\" \"cd subapp-follow-up && npm run dev\" \"cd subapp-manage-module && npm run dev\" \"cd subapp-qc-center && npm run dev\" \"cd subapp-referral && npm run dev\"",
+    "dev": "concurrently \"cd main-app && npm run dev\" \"cd subapp-chronic-disease && npm run dev\" \"cd subapp-follow-up && npm run dev\" \"cd subapp-manage-module && npm run dev\" \"cd subapp-qc-center && npm run dev\" \"cd subapp-referral && npm run dev\" \"cd subapp-server-resource-manage && npm run dev\"",
+    "qc": "concurrently \"cd main-app && npm run dev\" \"cd subapp-qc-center && npm run dev\"",
     "install": "concurrently \"cd main-app && yarn\" \"cd subapp-chronic-disease && yarn\" \"cd subapp-follow-up && yarn\" \"cd subapp-manage-module && yarn\" \"cd subapp-qc-center && yarn\" \"cd subapp-referral && yarn\"",
     "build": "zx scripts/build.mjs"
   },
