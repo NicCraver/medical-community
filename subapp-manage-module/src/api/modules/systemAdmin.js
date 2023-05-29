@@ -600,3 +600,9 @@ export const checkSamePhone = (params) =>
     url: '/ygt-user/user/checkSamePhone',
     params,
   })
+  
+export const getFormTemplateList = (params) =>
+  http.get({
+    url: '/ygt-user/user/checkSamePhone',
+    params,
+  })
