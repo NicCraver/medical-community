@@ -69,9 +69,6 @@ async function run(sub_apps_) {
         sub_apps_.map((app) => $`mkdir -p build/${map[app]}`)
     );
 
-    let a = sub_apps_.map((app) => `cp -r main-app/main build/${map[app]}`)
-    console.log(`a`, a)
-
     // 复制主应用产物到对应项目目录
     await Promise.all(
         sub_apps_.map((app) => $`cp -r main-app/main build/${map[app]}`)
