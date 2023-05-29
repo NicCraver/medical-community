@@ -179,6 +179,14 @@ export const useSystemConfig = () => {
         isOpenMessageFunc = false
         isShowMessage = false
       },
+      质量控制中心平台: () => {
+        appTitle = '质量控制中心平台'
+        menuTitle = '质量控制中心平台'
+        isShowMenuLogo = false
+        isShowLoginLogo = false
+        isOpenMessageFunc = false
+        isShowMessage = false
+      },
       黑龙江电子病历: () => {
         hosName = '黑龙江'
         // browserTitle = '服务资源管理'
