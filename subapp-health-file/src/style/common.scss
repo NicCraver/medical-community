@@ -1,0 +1,327 @@
+@import "./variable.scss";
+
+.width100 {
+  width: 100% !important;
+}
+.height100 {
+  height: 100% !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-scroll-horizontal {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.overflow-scroll-vertical {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+
+.margin-right-6 {
+  margin-right: 6px;
+}
+.margin-left-6 {
+  margin-left: 6px;
+}
+.margin-right-10 {
+  margin-right: 10px;
+}
+.margin-left-10 {
+  margin-left: 10px;
+}
+.margin-right-40 {
+  margin-right: 40px;
+}
+.margin-left-40 {
+  margin-left: 40px;
+}
+.margin-right-100 {
+  margin-right: 100px;
+}
+.margin-left-100 {
+  margin-left: 100px;
+}
+
+.padding-right-6 {
+  padding-right: 6px;
+}
+.padding-left-6 {
+  padding-left: 6px;
+}
+.padding-right-10 {
+  padding-right: 10px;
+}
+.padding-left-10 {
+  padding-left: 10px;
+}
+.padding-right-100 {
+  padding-right: 100px;
+}
+.padding-left-100 {
+  padding-left: 100px;
+}
+
+.input-width-default {
+  width: 240px;
+}
+.input-width-default-important {
+  width: 240px !important;
+}
+.input-width-mini {
+  width: 180px;
+}
+.input-width-mini-important {
+  width: 180px !important;
+}
+
+.input-width-super-mini {
+  width: 140px;
+}
+.input-width-super-mini-important {
+  width: 140px !important;
+}
+
+// 常用浮动
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+// 清除浮动
+.l-clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.l-clearfix {
+  *zoom: 1;
+}
+
+// 文字超出后...
+.overflow-point {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.letter-point{
+  word-wrap: break-word;
+}
+
+// 上下左右居中
+.l-center {
+  @include l-center;
+}
+
+// 水平居中
+.l-center-horizontal {
+  @include l-center-horizontal;
+}
+
+// 垂直居中
+.l-center-vertical {
+  @include l-center-vertical;
+}
+
+// 常用的垂直方向的滑动容器
+.scroll-vertical {
+  @include scroll-vertical;
+}
+
+// 隐藏滚动条
+// webkit内核
+.scroll_content::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.scroll_content::-webkit-scrollbar-button {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-webkit-scrollbar-resizer {
+  background-color: rgba(0, 0, 0, 0);
+}
+// o内核
+.scroll_content .-o-scrollbar {
+  -moz-appearance: none !important;
+  background: rgba(0, 255, 0, 0) !important;
+}
+.scroll_content::-o-scrollbar-button {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-o-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-o-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-o-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-o-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
+}
+.scroll_content::-o-scrollbar-resizer {
+  background-color: rgba(0, 0, 0, 0);
+}
+// IE10,IE11,IE12
+.scroll_content {
+  -ms-scroll-chaining: chained;
+  -ms-overflow-style: none;
+  -ms-content-zooming: zoom;
+  -ms-scroll-rails: none;
+  -ms-content-zoom-limit-min: 100%;
+  -ms-content-zoom-limit-max: 500%;
+  -ms-scroll-snap-type: proximity;
+  -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+  // -ms-overflow-style: none;
+  overflow: auto;
+}
+
+// 常用在充满屏幕的容器
+.full-screen-container {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 4px;
+}
+.full-screen {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+}
+
+// 可点击元素hover鼠标指针变化
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.display-inherit {
+  display: inherit;
+}
+
+.table-wrapper {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.super-mini-button {
+  display: inline-block;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid $l-color-primary;
+  // background-color: $l-color-primary;
+  font-size: 12px;
+  text-align: center;
+  color: $l-color-primary;
+}
+
+
+.text-align-right {
+  text-align: right;
+  input {
+    text-align: right;
+  }
+}
+.text-align-left {
+  text-align: left;
+  input {
+    text-align: left;
+  }
+}
+#tags-view-container:hover {
+  overflow-x: auto;
+} 
+
+#tags-view-container.scroll_content::-webkit-scrollbar {
+  overflow: auto;
+  width: 10px !important;
+  height: 4px !important;
+  border-radius: 8px !important;
+}
+
+#tags-view-container.scroll_content::-webkit-scrollbar-button {
+  background-color: rgba(222, 223, 225, 0) !important;
+}
+
+#tags-view-container.scroll_content::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#tags-view-container.scroll_content::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#tags-view-container.scroll_content::-webkit-scrollbar-thumb {
+  // background-color: rgba(0, 0, 0, 1) !important;
+  background-color: #dddee0 !important;
+  border-radius: 8px !important;
+}
+#tags-view-container.scroll_content::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+#tags-view-container.scroll_content::-webkit-scrollbar-resizer {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+/* 滚动样式 */
+.el-scrollbar {
+  height: 100%;
+}
+
+.el-scrollbar__wrap {
+  height: calc(100% + 6px);
+}
+
+.el-table__body-wrapper .el-scrollbar__wrap {
+  height: calc(100% + 20px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  overflow: auto;
+  margin-left: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 6px;
+}

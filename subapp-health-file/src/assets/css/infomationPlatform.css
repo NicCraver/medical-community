@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+* {
+  font-family: 'SourceHanSansSC-regular';
+  box-sizing: border-box;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 卡片样式 */
+.el-card {
+  border-radius: 2px;
+}
+
+::v-deep .el-card__body {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+}
+
+/* 按钮样式 */
+.el-button--text {
+  padding: 0;
+  border: none;
+}
+
+.el-button .iconfont {
+  font-size: 14px;
+}
+
+.el-button--small {
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.el-button--default {
+  background: #fff;
+}
+
+.el-button--primary:focus,
+.el-button--primary:hover {
+  background: #6989ca;
+  border-color: #6989ca;
+  color: #fff;
+}
+
+/* .el-card__body {
+  height: 100%;
+  box-sizing: border-box;
+} */
+
+/* 滚动样式 */
+/* .el-scrollbar {
+  height: 100%;
+}
+
+.el-scrollbar__wrap {
+  height: calc(100% + 6px);
+}
+
+.el-table__body-wrapper .el-scrollbar__wrap {
+  height: calc(100% + 20px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 6px;
+} */
+
+
+
+/* form */
+/* .el-form-item,
+.el-form-item--small.el-form-item {
+  margin-bottom: 16px;
+} */
+
+/* tree */
+/* .el-tree .is-current {
+  font-weight: 700;
+}
+
+.el-tree>.el-tree-node {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.el-tree .custom-tree-node {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+} */
+
+/* table */
+/* .el-table--small {
+  font-size: 14px;
+} */
+
+/* 让链接在 hover 状态下显示下划线 */
+/* a:hover {
+  text-decoration: underline;
+} */
+
+/* 默认不显示下划线，保持页面简洁 */
+/* ins,
+a {
+  text-decoration: none;
+} */
+
+/* 去除 ie6 & ie7 焦点点状线 */
+/* a:focus,
+*:focus {
+  outline: none;
+} */
+
+/* 清除浮动 */
+/* .clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+} */
+
+/* .clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+} */
+
+/* 设置浮动，减少浮动带来的 bug */
+/* .fl,
+.fr {
+  display: inline;
+}*/

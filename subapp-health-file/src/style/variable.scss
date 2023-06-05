@@ -1,0 +1,227 @@
+// 分辨率设置 尺寸
+$resolution-ratio-width: 1440px;
+$device-min-width : 1280px;
+// 横向滚动条高度,竖向滚动条宽度
+$scrollbar-wh-size: 10px;
+// 字号
+$l-font-size-max: 16px !default;
+$l-font-size: 14px !default;
+$l-font-size-min: 12px !default;
+
+// 字重
+$l-font-weight: bold !default;
+
+// 字体
+$l-font-familySC-regular: SourceHanSansSC-Regular !default;
+$l-font-familySC-heavy: SourceHanSansSC-Heavy !default;
+$l-font-familySC-bold: SourceHanSansSC-Bold !default;
+$l-font-familySC-medium: SourceHanSansSC-Medium !default;
+$l-font-familyDIN-regular: DINPro-Regular !default;
+$l-font-familyDIN-bold: DINPro-Bold !default;
+
+
+// 菜单栏相关颜色
+$l-color-menu: #134796; // 整个导航区背景色
+$l-color-select: #19294f; // 一级导航背景色
+$l-color-firstmenu-font: #fff;// 一级菜单字体颜色
+$l-color-menu-active: #2b4583;// 二级菜单选中导航背景色
+$l-color-menu-font: #95a2c1;// 二级菜单字体颜色
+$l-color-menu-font-active: #fff;// 二级菜单选中字体
+$l-color-threemenu-font-active: #2b4583;// 选中三级级菜单字体颜色
+$l-color-threemenu-font: #949da3;// 三级级菜单字体颜色
+$l-color-logo: #fff;
+
+// element-ui  颜色
+$l-color-success : #15BC9C;// 成功
+$l-color-warning : #FBA541;// 警示
+$l-color-important : #F05A23;// 强调
+$l-color-error : #EF0F0F;// 错误
+$l-color-info : #909399; // 提示
+$l-color-link: #1477FF;// 链接色/文字操作色
+
+// 主色
+$l-color-primary1: #2B4583 !default;
+$l-color-primary: #2B4583 !default;
+
+$l-color-white: #ffffff !default;
+$l-color-black: #000000 !default;
+
+
+$l-color-text-primary: #605d5a !default;
+$l-color-text-regular: #999999 !default;
+$l-color-text-secondary: #cccccc !default;
+
+// 辅色
+$l-color-secondary-1: #3759FF; // 一些用户名称和链接文字颜色
+$l-color-secondary-2: #27CBAC;
+
+
+/// 边框颜色
+$l-color-border-1: #a0a2ad !default;
+$l-color-border-2: #c1c5cd !default;
+$l-color-border-3: #dcdfe6 !default;
+$l-color-border-4: #e6e7eb !default;
+$l-color-border-5: #dcdee3 !default;
+$l-color-border-6: #f7a820 !default; //新生儿图标颜色
+$l-color-border-7: #C0C4CC !default;
+$l-color-border-8: #F0F0F0 !default;// 白色背景分割线
+
+// 背景颜色
+$l-color-bgcolor: #030303 !default;
+$l-color-bgcolor-1: #f5f7fa !default;
+$l-color-bgcolor-2: #67c23a !default;
+$l-color-bgcolor-3: #ff4040 !default;
+$l-color-bgcolor-4: #446abd !default;
+$l-color-bgcolor-5: #7ed321 !default;
+$l-color-bgcolor-6: #f7f9fc !default;
+$l-color-bgcolor-7: #fff5ef !default;
+$l-color-bgcolor-8: #ffb11b !default;
+$l-color-bgcolor-9: #ff5b50 !default;
+$l-color-bgcolor-10: #fff2db !default;
+$l-color-bgcolor-11: #e4e4e4 !default;// 浅白色背景分割线、边框色
+$l-color-bgcolor-12: #B4BBC8FF !default;
+$l-color-bgcolor-13: #fdeee9 !default;
+$l-color-bgcolor-14: #f5f5f5 !default;
+$l-color-bgcolor-15: #e1140a !default;
+$l-color-bgcolor-16: #bdc1c3 !default;
+$l-color-bgcolor-17: #ffd2c2 !default;
+$l-color-bgcolor-18: #F1F4F6 !default;// 所有灰底、卡片灰底、白底选中色
+$l-color-bgcolor-19: #f0f7ff !default;
+$l-color-bgcolor-20: #d5e8ff !default;
+$l-color-bgcolor-21: #EBEEF0 !default;// 浅灰色  内页背景
+$l-color-bgcolor-22: #DFE2E6 !default;// 列表选中背景色、浅底选中色
+$l-color-bgcolor-23: #808FB5 !default;// 表格 表头背景颜色
+$l-color-bgcolor-24: rgba(43,69,131,0.25) !default;// 表格 行选中背景颜色
+
+//字体颜色
+$l-color-fontcolor-1: #134796 !default;
+$l-color-fontcolor-2: #3d7dfb !default;
+$l-color-fontcolor-3: #101010 !default;
+$l-color-fontcolor-4: #919191 !default;// 副标题 正文提示文本
+$l-color-fontcolor-5: #ef0f0f !default;
+$l-color-fontcolor-6: #E55D5D !default;
+$l-color-fontcolor-7: #6BC649 !default;
+$l-color-fontcolor-8: #666C70 !default;// 副标题 正文辅助文本/浅色背景上文字颜色
+$l-color-fontcolor-9: #B9C4CC !default;// 暗文字、不可点击
+
+//中间区域上下部分高度
+$l-height-bottom-cont: 260px !default;
+$l-height-main-cont: calc(100% - 260px) !default;
+
+// 常用高度
+$l-height-common-1: 20px;
+$l-height-common-2: 22px;
+$l-height-common-3: 24px;
+$l-height-common-4: 28px;
+$l-height-common-5: 32px;
+$l-height-common-6: 36px;
+$l-height-common-7: 40px;
+
+// 常用行高
+$l-lineheight-common-1: 20px;
+$l-lineheight-common-2: 22px;
+$l-lineheight-common-3: 24px;
+$l-lineheight-common-4: 28px;
+$l-lineheight-common-5: 32px;
+$l-lineheight-common-6: 36px;
+$l-lineheight-common-7: 40px;
+
+
+// 圆角
+$l-bg-radius-max: 8px !default;
+$l-bg-radius-bg: 4px !default;
+$l-bg-radius-mini: 2px !default;
+
+
+$l-padding-left-mini: 5px !default;
+
+// 框架间距
+$l-layout-space-min: 8px !default;
+$l-layout-space-max: 16px !default;
+$l-layout-space-max-: -16px !default;// 修改的时候和 上面的变量同步修改
+
+// margin 间距
+$l-margin-default-1: 2px !default;
+$l-margin-default-2: 4px !default;
+$l-margin-default-3: 6px !default;
+$l-margin-default-4: 8px !default;
+$l-margin-default-5: 10px !default;
+$l-margin-default-6: 16px !default;
+
+// padding
+$l-padding-default-1: 2px !default;
+$l-padding-default-2: 4px !default;
+$l-padding-default-3: 6px !default;
+$l-padding-default-4: 8px !default;
+$l-padding-default-5: 10px !default;
+$l-padding-default-6: 16px !default;
+
+// 不可用 禁用
+$l-disabled-color: #eeeeee !default;
+
+// radio
+$l-radio-paddineLeft: 6px !default;
+$l-radio-marginRight: 16px !default;
+
+// checkbox
+$l-checkbox-paddineLeft: 6px !default;
+$l-checkbox-marginRight: 16px !default;
+$l-checkbox-background: #d8d8d8 !default;
+
+$header-height: 60px;
+$header-background: #ededed;
+$header-color: #2a3f54;
+$header-padding: 15px;
+
+// 左侧菜单样式变量
+$menu-background: #2A3F54;
+$menu-color: #fff;
+$menu_active_color: #ffd04b;
+$menu_width: 200px;
+// 主视图区样式变量
+$main_base_color: #f2f3f3;
+$main_body_padding: 8px;
+// 页面标签页样式
+
+// 上下左右居中
+@mixin l-center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+
+// 水平居中
+@mixin l-center-horizontal {
+  position: relative;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+// 垂直居中
+@mixin l-center-vertical {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// 垂直滑动容器
+@mixin scroll-vertical {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-bottom: 100px;
+}
