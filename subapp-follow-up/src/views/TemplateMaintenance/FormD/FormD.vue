@@ -7,7 +7,7 @@
       :anxFormData="anxFormData"
       :cusComponents="cusComponents"
       @createCusCom="createCusCom"
-      :baseUrl="'http://124.196.7.86:7001/ygt-followup'"
+      :baseUrl="baseUrl"
       :showBack="true"
     />
     <el-dialog :visible.sync="dialogfVis" title="保存模板">
