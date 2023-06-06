@@ -6,6 +6,7 @@ import path from "path";
 const map = {
     'subapp-chronic-disease': 'microapp-mb',
     'subapp-follow-up': 'microapp-mb',
+    'subapp-public-serve': 'microapp-mb',
     'subapp-manage-module': 'microapp-manage',
     'subapp-qc-center': 'microapp-qc',
     'subapp-referral': 'microapp-referral',
@@ -24,6 +25,7 @@ const configMaps = {
 const distMaps = {
     'subapp-chronic-disease': 'chronicDisease',
     'subapp-follow-up': 'followup',
+    'subapp-public-serve': 'publicServe',
     'subapp-manage-module': 'manageModule',
     'subapp-qc-center': 'qcCenter',
     'subapp-referral': 'referral',
