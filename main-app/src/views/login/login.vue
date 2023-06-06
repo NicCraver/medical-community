@@ -1,13 +1,9 @@
-<!--
- * @Author: Nic
- * @Date: 2022-12-06 14:54:12
- * @LastEditTime: 2023-03-13 18:04:43
- * @LastEditors: Nic
- * @Description: 登录
- * @FilePath: /medical-community/main-app/src/views/login/login.vue
--->
 <template>
-  <LoginLayout :title="loginLayoutState.title" :backgroundImage="loginLayoutState.backgroundImage">
+  <LoginLayout
+    v-if="pageStatus === 'login'"
+    :title="loginLayoutState.title"
+    :backgroundImage="loginLayoutState.backgroundImage"
+  >
     <a-form class="anx-login-ruleForm" ref="formRef" :model="formState" :rules="rules">
       <a-form-item ref="account" name="account">
         <a-input placeholder="账号" v-model:value="formState.account" allow-clear @pressEnter="onSubmit()" />
@@ -33,25 +29,33 @@
         />
       </a-form-item>
       <a-form-item>
-        <a-button style="width: 100%; margin-top: 10px" type="primary" :loading="loading" @click="onSubmit"
-          >登录</a-button
+        <a-button style="width: 100%; margin-top: 10px" type="primary" :loading="loading" @click="onSubmit">
+          登录
+        </a-button>
+        <a-button
+          style="width: 100%; margin-top: 10px"
+          v-if="appTitle === '质量控制中心平台'"
+          @click="onlineApplication"
+          >在线申请</a-button
         >
       </a-form-item>
     </a-form>
   </LoginLayout>
+  <SignUp v-else @changePageStatus="changePageStatus"> </SignUp>
 </template>
 
 <script setup>
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import LoginLayout from './components/LoginLayout.vue'
+import SignUp from './components/signUp.vue'
 import { notification, message } from 'ant-design-vue'
 import { CheckCircleFilled } from '@ant-design/icons-vue'
 import { userLogin, getToken, getLoginMenus, getLoginMenuById, generateKey } from '@/api/modules/login/index'
 import { logout } from '@/api/modules/layout'
 import { encryptsm3 } from '@/utils/utils'
-import { isBackstage, isHei, isMenHu, menuHei } from '@/dev'
-import { useLoginForm, useSystemConfig } from './hooks'
+import { isBackstage, isHei, isMenHu, menuHei, useSystemConfig } from '@/dev'
+import { useLoginForm } from './hooks'
 import { useLoginMessage } from '@/hooks/useLoginMessage'
 import FingerprintJS from '@fingerprintjs/fingerprintjs'
 
@@ -62,8 +66,15 @@ const router = useRouter()
 const { formState, rules, roleOptions, roleLoading, formRef, loading } = useLoginForm()
 
 // 设置系统配置
-
 const { loginLayoutState } = useSystemConfig()
+
+// 页面状态
+// const pageStatus = ref('login')
+const pageStatus = ref('signUp')
+
+const appTitle = computed(() => {
+  return store.state.app.appTitle
+})
 
 // 判断环境是否为后台管理
 const build_env = computed(() => {
@@ -143,7 +154,12 @@ const onGetLoginMenus = async (loginRes) => {
     let appIds = []
     if (isHei()) {
       // console.log(`是否是黑龙江环境`)
-      appIds = ['c9981569b299440dac08fd1d76559dc8', '747daaf979f14c6bb332cfccb1b724cb', '7686eb68fe3b4242a5991e681f865d95', '8cc41399417548408d2c6b28c7213f4c']
+      appIds = [
+        'c9981569b299440dac08fd1d76559dc8',
+        '747daaf979f14c6bb332cfccb1b724cb',
+        '7686eb68fe3b4242a5991e681f865d95',
+        '8cc41399417548408d2c6b28c7213f4c',
+      ]
     } else if (isMenHu()) {
       appIds = ['c9981569b299440dac08fd1d76559dc8', '8cc41399417548408d2c6b28c7213f4c']
     } else {
@@ -275,6 +291,17 @@ const startTimer = () => {
 const stopTimer = () => {
   clearInterval(timer)
   timer = null
+}
+
+// 跳转注册
+function onlineApplication() {
+  changePageStatus('signUp')
+}
+
+// 切换 pageStatus 值
+function changePageStatus(status) {
+  console.log(`status`,status)
+  pageStatus.value = status
 }
 
 onMounted(() => {
