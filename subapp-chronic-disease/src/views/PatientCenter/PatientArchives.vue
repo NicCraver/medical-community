@@ -20,9 +20,9 @@
                 <span>{{ patientInfo.addressDetail }}</span>
               </div>
               <div class="pa-header-tags">
-                <div v-for="v in tags" :key="v.name" class="pa-header-tag pa-header-tag2">
+                <!-- <div v-for="v in tags" :key="v.name" class="pa-header-tag pa-header-tag2">
                   {{ v.name }}
-                </div>
+                </div> -->
                 <div v-for="v in patientInfo.patientRichDiseaseList" :key="v.richDiseaseCode" class="pa-header-tag">
                   {{ v.richDiseaseName }}
                 </div>
@@ -200,10 +200,6 @@ export default {
             {
               label: '随访记录',
               component: 'FollowUpRecords',
-            },
-            {
-              label: '患者指标分析',
-              component: 'IndicatorAnaysis',
             },
           ]
         : [
