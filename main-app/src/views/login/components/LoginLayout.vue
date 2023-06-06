@@ -201,7 +201,7 @@ const titleComputed = computed(() => {
   }
 
   .login-conent {
-    width: 300px;
+    width: 330px;
     margin: 0 auto;
     top: 30%;
     position: absolute;
