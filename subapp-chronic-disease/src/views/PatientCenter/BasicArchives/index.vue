@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="BasicArchives">
-    <div class="sliding-tabs-container">
+    <!-- <div class="sliding-tabs-container">
       <div class="sliding-tabs">
         <input type="radio" id="radio-1" name="tabs" v-model="selectedTab" value="FullInformation" />
         <label class="tab" for="radio-1">全量信息</label>
@@ -20,7 +20,7 @@
         <span class="spot"></span>
         <span class="glider"></span>
       </div>
-    </div>
+    </div> -->
     <router-view></router-view>
   </div>
 </template>
