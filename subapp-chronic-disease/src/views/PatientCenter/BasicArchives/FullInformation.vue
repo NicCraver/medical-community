@@ -9,7 +9,7 @@
 <template>
   <el-scrollbar style="height: calc(100% - 50px)">
     <div class="basic-archives">
-      <!-- <div class="title" style="justify-content: center">个人基本信息表</div> -->
+      <div class="title" style="justify-content: center">个人基本信息表</div>
       <div class="archive-info bg-box">
         <el-form inline :disabled="isDisabled">
           <el-form-item label="建档人">
