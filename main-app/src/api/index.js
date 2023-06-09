@@ -53,6 +53,8 @@ if (LocalInterfaceDebugging) {
 const whiteList = [
   '/ygt-user/user/generateKey',
   '/ygt-user/tbFilePath/uploadFiles',
+  '/ygt-user/whitelist/getSysAreas',
+  '/ygt-user/whitelist/getDictionarys',
   // '/ygt-user/user/login',
   // '/ygt-api/general/getToken',
   // '/ygt-user/user/logout',
