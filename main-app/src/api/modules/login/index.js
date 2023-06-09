@@ -81,3 +81,34 @@ export const generateKey = (data) =>
     url: `/ygt-user/user/generateKey`,
     data,
   })
+
+// 获取省，市，区字典(白名单)
+export const getSysAreas = (params) =>
+  http.get({
+    url: `/ygt-user/whitelist/getSysAreas`,
+    params,
+  })
+
+// 根据省市区编码查询机构下拉框数据(白名单)
+export const getHosOptionsByAreaCode = (params) =>
+  http.get({
+    url: `/ygt-user/whitelist/getHosOptionsByAreaCode`,
+    params,
+  })
+
+// 类型下拉
+// tbDictionaryDetail/getDictionarys
+// groupId 67cc917a8e44482cb30a6f34636cedeb
+// [key,groupId]
+// post
+export const getDictionarys = (data) =>
+  http.post({
+    url: `/ygt-user/whitelist/getDictionarys`,
+    data,
+  })
+
+export const uploadFiles = (data) =>
+  http.post({
+    url: '/ygt-user/tbFilePath/uploadFiles',
+    data,
+  })
