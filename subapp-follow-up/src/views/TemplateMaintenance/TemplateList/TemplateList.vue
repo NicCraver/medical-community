@@ -10,7 +10,7 @@
               <el-option label="计划模板" value="FOLLOW"> </el-option>
               <el-option label="评估模板" value="EVALUATION"> </el-option>
               <el-option label="调研模板" value="RESEARCH"> </el-option>
-              <el-option label="活动模板" value="ACTIVITY"> </el-option>
+              <!-- <el-option label="活动模板" value="ACTIVITY"> </el-option> -->
               <el-option label="会诊模板" value="MDT"> </el-option>
             </el-select>
             <el-select v-model="queryParams.status" clearable placeholder="状态">
