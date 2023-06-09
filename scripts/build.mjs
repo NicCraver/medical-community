@@ -10,6 +10,7 @@ const map = {
     'subapp-manage-module': 'microapp-manage',
     'subapp-qc-center': 'microapp-qc',
     'subapp-referral': 'microapp-referral',
+    'subapp-health-file': 'microapp-ehr',
     'subapp-server-resource-manage': 'microapp-data-dock',
     'subapp-ygt-portal': 'microapp-mh'
 }
@@ -20,6 +21,7 @@ const configMaps = {
     'microapp-qc': '质量',
     'microapp-referral': '转诊',
     'microapp-data-dock': '数据治理',
+    'microapp-ehr': 'ehr',
     'microapp-mh': '门户'
 }
 const distMaps = {
@@ -30,7 +32,8 @@ const distMaps = {
     'subapp-qc-center': 'qcCenter',
     'subapp-referral': 'referral',
     'subapp-server-resource-manage': 'serverResourceManage',
-    'subapp-ygt-portal': 'ygtPortal'
+    'subapp-ygt-portal': 'ygtPortal',
+    'subapp-health-file': 'healthFile',
 }
 
 const sub_app_ath = path.resolve(__dirname, "..");
