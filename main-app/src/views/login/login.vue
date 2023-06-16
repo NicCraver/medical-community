@@ -69,8 +69,7 @@ const { formState, rules, roleOptions, roleLoading, formRef, loading } = useLogi
 const { loginLayoutState } = useSystemConfig()
 
 // 页面状态
-// const pageStatus = ref('login')
-const pageStatus = ref('signUp')
+const pageStatus = ref('login')
 
 const appTitle = computed(() => {
   return store.state.app.appTitle
@@ -300,7 +299,6 @@ function onlineApplication() {
 
 // 切换 pageStatus 值
 function changePageStatus(status) {
-  console.log(`status`,status)
   pageStatus.value = status
 }
 
