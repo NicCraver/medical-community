@@ -62,7 +62,9 @@ export const getLoginMenus = (data) =>
 // 黑龙江单点登录接口
 export const getCurrentUser = () =>
   http.get({
-    url: `${process.env.VUE_APP_SINGLE_API}/ips/admin/web/getCurrentUser`,
+    // url: `/ips/admin/web/getCurrentUser`,
+    // url: `${process.env.VUE_APP_SINGLE_API}/ips/admin/web/getCurrentUser`,
+    url: `${window.location.protocol + "//" + window.location.hostname}/ips/admin/web/getCurrentUser`,
     withCredentials: true,
   })
 
