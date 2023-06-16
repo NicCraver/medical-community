@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --report",
     "build:backstage-mdt": "vue-cli-service build --mode backstage-mdt",
     "build:dev": "vue-cli-service build --mode dev",
     "build:chronicDisease-d": "vue-cli-service build --mode chronicDisease-d",
@@ -64,6 +64,8 @@
     "@vue/cli-service": "~4.5.15",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-plugin-import": "^1.13.3",
+    "compression-webpack-plugin": "6.1.1",
+    "happypack": "^5.0.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "sass": "^1.26.5",

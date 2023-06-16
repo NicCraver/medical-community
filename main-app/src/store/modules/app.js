@@ -17,6 +17,7 @@ const app = {
     appTitle: '',
     menuTitle: '',
     hosName: '',
+    menuData: null,
   },
   mutations: {
     setPathM: (state, data) => {
@@ -55,6 +56,28 @@ const app = {
     setHosNameM: (state, data) => {
       state.hosName = data
     },
+    setMenuDataM: (state, data) => {
+      state.menuData = data
+    },
+    setInitDataM: (state, data) => {
+      // 应用切换过渡
+      state.appLoading = false
+      // 子路由跳转路径，用于左侧菜单渲染
+      state.path = ''
+      // 子应用名称
+      state.appName = ''
+      // 是否跨应用跳转
+      state.isAcrossApplication = false
+      state.isShowMenuLogo = true
+      state.isShowLoginLogo = true
+      state.isOpenMessageFunc = true
+      state.isShowMessage = true
+      state.messageType = '', //DISE 慢病 REF 双
+        state.appTitle = ''
+      state.menuTitle = ''
+      state.hosName = ''
+      state.menuData = null
+    },
   },
   actions: {
     setPath({ commit }, data) {
@@ -77,7 +100,6 @@ const app = {
       commit('setIsShowLoginLogoM', data)
     },
     setIsOpenMessageFunc({ commit }, data) {
-      console.log(`setIsOpenMessageFunc`, data)
       commit('setIsOpenMessageFuncM', data)
     },
     setIsShowMessage({ commit }, data) {
@@ -95,6 +117,12 @@ const app = {
     setHosName({ commit }, data) {
       commit('setHosNameM', data)
     },
+    setMenuData({ commit }, data) {
+      commit('setMenuDataM', data)
+    },
+    setInitData({ commit }) {
+      commit('setInitDataM', data)
+    }
   },
   getters: {},
 }

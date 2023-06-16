@@ -20,7 +20,8 @@ import pdf from 'vue-pdf'
 
 const store = useStore()
 
-const url = `${config.healthFile}/healthFile/`
+// const url = `${config.healthFile}/healthFile/`
+const url = `${config.healthFile}${process.env.BASE_URL}healthFile/`
 const baseroute = process.env.BASE_URL + 'app-healthFile'
 
 let microAppData = { basePath: '/app-healthFile', msg: '来自基座的数据', pdf }

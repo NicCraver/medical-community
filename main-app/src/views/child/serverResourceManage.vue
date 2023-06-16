@@ -17,7 +17,7 @@
 import config from '../../config'
 import { useStore } from 'vuex'
 const store = useStore()
-const url = `${config.serverResourceManage}/serverResourceManage/`
+const url = `${config.serverResourceManage}${process.env.BASE_URL}serverResourceManage/`
 const baseroute = process.env.BASE_URL + 'app-serverResourceManage'
 let microAppData = { basePath: '/app-serverResourceManage', msg: '来自基座的数据' }
 function handleCreate() {

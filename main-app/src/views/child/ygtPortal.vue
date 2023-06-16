@@ -27,7 +27,7 @@ import { useStore } from 'vuex'
 
 const store = useStore()
 
-const url = `${config.ygtPortal}/ygtPortal/`
+const url = `${config.ygtPortal}${process.env.BASE_URL}ygtPortal/`
 const baseroute = process.env.BASE_URL + 'app-ygtPortal'
 
 let microAppData = { basePath: '/app-ygtPortal', msg: '来自基座的数据' }

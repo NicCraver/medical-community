@@ -13,6 +13,11 @@ const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const dayjs = require('dayjs')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const HappyPack = require('happypack');
+const os = require('os');
+// 开辟一个线程池，拿到系统CPU的核数，happypack 将编译工作利用所有线程
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 const updateVersion = `主应用发布时间: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}`
 let timeStamp = new Date().getTime()
@@ -32,6 +37,19 @@ const plugins = [
   new webpack.DefinePlugin({
     'process.env.UPDATE_VERSION': JSON.stringify(updateVersion),
     // 'process.env.VUE_APP_SHOW_LOG': JSON.stringify(ENV_CONFIG.VUE_APP_SHOW_LOG),
+  }),
+  new CompressionPlugin({
+    filename: '[path][base].gz',
+    algorithm: 'gzip',
+    test: /\.js$|\.css$|\.html$/,
+    threshold: 10240,
+    minRatio: 0.8
+  }),
+  new HappyPack({
+    id: 'happybabel',
+    loaders: ['babel-loader'],
+    threadPool: happyThreadPool,
+    verbose: true,
   }),
   AutoImport({
     include: [
