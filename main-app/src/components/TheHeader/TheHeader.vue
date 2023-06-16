@@ -37,11 +37,7 @@
       </a-dropdown>
     </div>
     <!-- 转诊消息提示 -->
-    <div
-      class="message-tips"
-      v-if="store.state.app.isShowMessage"
-      @click="newsState.newsVisible = true"
-    >
+    <div class="message-tips" v-if="store.state.app.isShowMessage" @click="newsState.newsVisible = true">
       <div class="message-tips">
         <a-badge :dot="dotFlag">
           <IconFont type="icon-lingdang" style="font-size: 24px" />
@@ -112,12 +108,14 @@ const loginName = computed(() => {
 const router = useRouter()
 const internalInstance = getCurrentInstance()
 const onLogout = async () => {
-  console.log(`11111111`,11111111)
+  console.log(`11111111`, 11111111)
   try {
     await logout(sessionStorage.getItem('userId'))
     sessionStorage.clear()
     notification.destroy()
     console.log(`router`, router)
+    console.log(`store`, store)
+    store.dispatch('app/setInitData')
     router.push('/login')
     internalInstance.appContext.config.globalProperties.$disconnect()
     // window?.location?.reload?.()
@@ -144,9 +142,7 @@ onMounted(() => {
     ) {
       console.log('VueNativeSock 连接', window.g.VUE_APP_WS_BASE_URL)
       internalInstance.appContext.config.globalProperties.$connect(
-        `${window.g.VUE_APP_WS_BASE_URL}/ygt-message-server/message/${sessionStorage.getItem(
-          'userId',
-        )}`,
+        `${window.g.VUE_APP_WS_BASE_URL}/ygt-message-server/message/${sessionStorage.getItem('userId')}`,
         // `ws://124.196.7.86:7001/ygt-message-server/message/${sessionStorage.getItem('userId')}`
       )
     }

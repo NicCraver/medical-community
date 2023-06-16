@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { encryptsm3, encryptsm4, decryptsm4 } from '../utils/utils'
 import { router } from '../router'
 import { envConfig } from '@/dev'
+import store from '@/store'
 
 let isDev = process.env.NODE_ENV === 'development'
 // 是否使用本地接口调试（不走加解密）
@@ -76,6 +77,7 @@ const whiteList = [
   '/ygt-health-archive/ehrBalanceAccounts/exportExcel',
   // 黑龙江单点登录接口
   `${process.env.VUE_APP_SINGLE_API}/ips/admin/web/getCurrentUser`,
+  `${window.location.protocol + "//" + window.location.hostname}/ips/admin/web/getCurrentUser`,
   '/ygt-referral/his/onCacheHisData',
   '/ygt-referral/his/onCheckHisDiagnoseData'
 ]
@@ -176,6 +178,7 @@ const options = {
       consoleErr(error)
       const internalInstance = getCurrentInstance()
       internalInstance.appContext.config.globalProperties.$disconnect()
+      store.dispatch('app/setInitData')
       router.push('/login')
       // window?.location?.reload?.()
       return
