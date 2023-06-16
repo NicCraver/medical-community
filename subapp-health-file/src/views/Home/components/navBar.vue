@@ -8,44 +8,45 @@
         v-if="proEnv !== 'heilongjiang'"
       /> -->
       <div>
-        {{ proEnv === "heilongjiang" ? "黑龙江电子病历" : "健康档案共享调阅" }}
+        <!-- {{ proEnv === "heilongjiang" ? "黑龙江电子病历" : "健康档案共享调阅" }} -->
+        患者档案
       </div>
     </div>
     <div class="user">
       <div class="fasFaPowerOff" @click="closeFuc">
-        <IconSvg
+        <!-- <IconSvg
           iconClass="fasFaPowerOff"
           style="color: #fff"
           width="16"
           height="16"
-        ></IconSvg>
-        <div class="closeBtn">关闭</div>
+        ></IconSvg> -->
+        <div class="closeBtn">返回</div>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "navBar",
+  name: 'navBar',
   components: {},
   data() {
-    return {};
+    return {}
   },
   computed: {
     proEnv() {
-      return window.g.VUE_APP_ENVIRONMENT;
+      return window.g.VUE_APP_ENVIRONMENT
     },
   },
   methods: {
     closeFuc() {
-      if (this.proEnv === "heilongjiang") {
-        this.$router.push("/residentCenterInfo");
-        return;
+      if (this.proEnv === 'heilongjiang') {
+        this.$router.push('/residentCenterInfo')
+        return
       }
-      this.$router.push("/residentCenter");
+      this.$router.push('/residentCenter')
     },
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 .navBar {
@@ -54,7 +55,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   .title {
-    color: rgba(242, 242, 247, 100);
+    // color: rgba(242, 242, 247, 100);
     font-size: 16px;
     text-align: left;
     font-family: SourceHanSansSC-bold;
@@ -63,6 +64,8 @@ export default {
     align-items: center;
     justify-content: flex-start;
     margin-left: 10px;
+    font-weight: 600;
+    color: #303133;
   }
   .user {
     color: rgba(253, 253, 253, 100);
@@ -88,7 +91,13 @@ export default {
       cursor: pointer;
       .closeBtn {
         display: inline-block;
-        margin-left: 5px;
+        margin-right: 10px;
+        color: #606266;
+        border: 1px solid #606266;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        background: #fff;
       }
     }
 

@@ -29,8 +29,7 @@ let publicPath = envPlugins[window.g.VUE_APP_ENVIRONMENT].publicPath || "/"; */
 
 module.exports = {
   outputDir: 'healthFile',
-  // publicPath: '/healthFile/',
-  publicPath: '/ygt/ehr/healthFile/',
+  publicPath: process.env.VUE_APP_ENV === 'hei' ? '/ygt/ehr/healthFile/' : '/healthFile/',
   productionSourceMap: false,
   devServer: {
     hot: false,

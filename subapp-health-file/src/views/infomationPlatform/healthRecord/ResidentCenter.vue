@@ -24,9 +24,9 @@
                 v-model="queryParams.orgIdList"
                 filterable
                 collapse-tags
-                :disabled="isOriAdmin === 'true'"
                 style="width: 300px"
               >
+                <!-- :disabled="isOriAdmin === 'true'" -->
                 <el-option
                   v-for="(item, index) in hosList"
                   :key="index"
@@ -203,12 +203,17 @@ export default {
     },
   },
   mounted() {
-    this.currentRole = JSON.parse(sessionStorage.getItem('currentRole'))
-    this.isOriAdmin = sessionStorage.getItem('isOriAdmin')
-    this.getOrgNamesFuc()
-    this.getList()
+    setTimeout(() => {
+      this.init()
+    }, 1)
   },
   methods: {
+    init() {
+      this.currentRole = JSON.parse(sessionStorage.getItem('currentRole'))
+      this.isOriAdmin = sessionStorage.getItem('isOriAdmin')
+      this.getOrgNamesFuc()
+      this.getList()
+    },
     // 查询机构
     getOrgNamesFuc() {
       getOrgNames().then(({ code, result }) => {

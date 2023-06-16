@@ -8,8 +8,7 @@
  */
 module.exports = {
   outputDir: 'serverResourceManage',
-  // publicPath: '/ygt/serverResourceManage/', //heilongjang
-  publicPath: '/serverResourceManage/',
+  publicPath: process.env.VUE_APP_ENV === 'hei' ? '/ygt/ehr/serverResourceManage/' : '/serverResourceManage/',
   productionSourceMap: false,
   devServer: {
     hot: false,

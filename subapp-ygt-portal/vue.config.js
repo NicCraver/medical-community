@@ -1,6 +1,6 @@
 module.exports = {
   outputDir: 'ygtPortal',
-  publicPath: '/ygtPortal/',
+  publicPath: process.env.VUE_APP_ENV === 'hei' ? '/ygt/ehr/ygtPortal/' : '/ygtPortal/',
   productionSourceMap: false,
   devServer: {
     hot: false,

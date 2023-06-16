@@ -6,7 +6,7 @@
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:heilongjiang": "vue-cli-service build --mode heilongjiang",
-    "build:akesu": "vue-cli-service build --mode akesu",
+    "build:hei": "vue-cli-service build --mode hei",
     "build:test": "vue-cli-service build --mode test"
   },
   "dependencies": {

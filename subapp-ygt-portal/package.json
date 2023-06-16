@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build:hei": "vue-cli-service build --mode hei"
   },
   "dependencies": {
     "anx-vue": "git+http://10.16.140.53/anxhit/medicalsservicescommunity/01-baselines/frontends/anx-vue.git",
